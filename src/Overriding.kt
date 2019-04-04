@@ -16,6 +16,7 @@ open class Operations1(){
 }
 class MultiOperations1():Operations1(){
 
+    var t:Int?=null
     override fun sum(n1:Int,n2:Int):Int{
         return n1+n2*3
     }
