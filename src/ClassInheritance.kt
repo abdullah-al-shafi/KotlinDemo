@@ -1,5 +1,11 @@
 open class Operations(){
 
+    /*
+    by default it is public...
+    if we protect it we can access it by inheritance
+    if we privet it...we only can use it in this class
+     */
+    var processname:String?=null
     fun sum(n1:Int,n2:Int):Int{
         return n1+n2
     }
@@ -16,6 +22,9 @@ class MultiOperations():Operations(){
     fun multi(n1:Int,n2:Int):Int{
         return n1*n2
     }
+    fun GetName(){
+        super.processname
+    }
 }
 
 fun main(args:Array<String>){
@@ -26,6 +35,7 @@ fun main(args:Array<String>){
     var div = op.div(12,11)
     println("div:$div")
 
+    println("op.ProcessName:"+op.processname)
     //Second
 
     var op2= MultiOperations()
