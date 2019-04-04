@@ -1,18 +1,32 @@
 
-class Car(var type:String,var model:Int,var price:Double,
-          var milesDrive:Int,var owner:String){
+class Car(){
+    var type:String?=null
+    var model:Int?=null
+    var price:Double?=null
+    var milesDrive:Int?=null
+    var owner:String?=null
 
-//    init {
-//        println("type:$type")
-//        println("model:$model")
-//        println("price:$price")
-//        println("milesDrive:$milesDrive")
-//        println("owner:$owner")
-//    }
+    constructor( type:String, model:Int, price:Double,
+                 milesDrive:Int, owner:String):this(){
+
+        this.type=type
+        this.model=model
+        this.price=price
+        this.milesDrive=milesDrive
+        this.owner=owner
+        println("constructor1")
+
+    }
+    constructor(owner:String):this(){
+
+        this.owner=owner
+        println("constructor2")
+
+    }
 
     fun getCarPrice():Double {
 
-        return this.price - (this.milesDrive.toDouble()*10 )
+        return this.price!! - (this.milesDrive!!.toDouble()*10 )
     }
 
 }
@@ -24,5 +38,6 @@ fun main(args:Array<String>){
     println("shafiCar:"+shaCar.getCarPrice())
     val sadCar= Car("KIA",2019,2000.0,1,"Osman")
     println("sadCar:"+sadCar.getCarPrice())
+    val amanCar = Car("amanta")
 
 }
